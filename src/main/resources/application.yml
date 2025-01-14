@@ -1,0 +1,8 @@
+spring.application.name=kafkaTopicListener
+
+spring.kafka.bootstrap-servers=localhost:9092
+
+kafkaTopicName=my-topic
+kafkaGroupId=my-group
+#kafkaTopicName=${KAFKA_TOPIC_NAME}
+#kafkaGroupId=${KAFKA_GROUP_ID}
