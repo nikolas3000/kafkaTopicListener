@@ -1,8 +1,25 @@
-spring.application.name=kafkaTopicListener
+spring:
+  application:
+    name: kafkaTopicListener
 
-spring.kafka.bootstrap-servers=localhost:9092
+server:
+  port: 8080
 
-kafkaTopicName=my-topic
-kafkaGroupId=my-group
-#kafkaTopicName=${KAFKA_TOPIC_NAME}
-#kafkaGroupId=${KAFKA_GROUP_ID}
+kafka:
+  bootstrap-servers: localhost:9092
+  properties:
+#    max.poll.records: 100
+#    max.poll.interval.ms: 300000
+
+kafkaTopicName: my-topic
+kafkaGroupId: my-group
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
